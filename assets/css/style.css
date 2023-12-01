@@ -46,6 +46,9 @@ header{
     -moz-transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
     -o-transform: translate(-50%,-50%);
+
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 .heading-top{
     font-size: 60px;
@@ -53,10 +56,70 @@ header{
     letter-spacing: 35px;
     display: block;
     line-height: 110px;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+
 }
 .heading-bottom{
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 17.4px;
     display: block;
+    animation: moveInRight 1s ease;
+    -webkit-animation: moveInRight 1s ease-in;
+}
+@keyframes moveInLeft{
+    0%{
+        opacity: 0;
+        transform: translateX(-100px);
+        -webkit-transform: translateX(-100px);
+        -moz-transform: translateX(-100px);
+        -ms-transform: translateX(-100px);
+        -o-transform: translateX(-100px);
+}
+    80%{
+        transform: translateX(20px);
+        -webkit-transform: translateX(20px);
+        -moz-transform: translateX(20px);
+        -ms-transform: translateX(20px);
+        -o-transform: translateX(20px);
+}
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+}
+}
+@keyframes moveInRight{
+    0%{
+        opacity: 0;
+        transform: translateX(100px);
+        -webkit-transform: translateX(100px);
+        -moz-transform: translateX(100px);
+        -ms-transform: translateX(100px);
+        -o-transform: translateX(100px);
+}
+    80%{
+        transform: translateX(-20px);
+        -webkit-transform: translateX(-20px);
+        -moz-transform: translateX(-20px);
+        -ms-transform: translateX(-20px);
+        -o-transform: translateX(-20px);
+}
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+}
+}
+.btn:link,
+.btn:visited {
+
 }
